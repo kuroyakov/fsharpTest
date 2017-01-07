@@ -7,13 +7,9 @@ matrix:
       sudo: required
       mono:
         - latest
-        - 4.4.2
-        - 4.0.5
     - os: osx
       mono:
         - latest
-        - 4.4.2
-        - 4.0.5
   # Allow builds which fail only on OSX (macOS) to succeed for now
   # while we're working on getting macOS CI builds working.
   allow_failures:
