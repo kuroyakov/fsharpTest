@@ -5,7 +5,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: "2833a2e8817b18be2e6b57999bb3c388fd73e070"
+  api_key: 2833a2e8817b18be2e6b57999bb3c388fd73e070
   file_glob: true
   file: ./build/*.{dll}
   skip_cleanup: true
