@@ -5,7 +5,8 @@ script:
 
 deploy:
   provider: releases
-  api_key: 2d35039cca6eebcf800c280dd5d82dd1931aecc7 
+  api_key: 
+    secure: "iYaHgRg0Sl3hbVpa8qTb9MZWiCTMCUTwIPghJ959B39ctp+BEu5BZw10W82RxWLq3mpM6GpqzmRLnf6Ijb6Psq5vihTfkEFIimbMPcVZHgTiD5tndeLfQU1GhylhiZ0KWzdEoNTIG8E3Zj5OB4kglssoLpI4UutuA/0fUFFQ9sAoJq7lOCIRYjzTwQiuVwVoXu5kFEEltv1MheWfugyQoJyg7xrWl+qplRXGciXEHPFkrQEo7RRRfzA2u6Mc6CqvlFo8DMUZU9ZDUpk9vW2ORtWmB7vKwQbVoKH5eu9ztMhbe23/YXIMbzyQ4uVmgeujh/hMZ/QmmNsR/14g2ruDzosmatw2tsERol+7lDoWU0VhavR5VbydGUZNNZCzvtPldDI7FaFmhfPKu+zBZ2yqguS2VAy1ujMgtuAGX1FAk/O3LAR3ApnOl7uAyMWTUE85XLMiiYtEpalBIoDgySIgVir2zl+IZwAd+pZXLlEU1r0BlSSJE7+b8Y73V1m4un38j2PXngE7hKY4jUl6burRjY4Jdi4LT7xHEqGyynsHh252Y6QF/GOXcZJ5UwviI/eKYPVj7AWs4/+OuCCaTS6nDkrN0Cs03F8K7yPIVekFYGKgMWO4UffNVuUzlcoYqLbfVuN7ygYs4cM8JB5Kl3ihj4oeJv5IwT0byTroGZmPAP0=" 
   file_glob: true
   file: ./build/*.{dll}
   skip_cleanup: true
