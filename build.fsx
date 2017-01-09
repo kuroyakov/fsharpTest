@@ -2,6 +2,7 @@
 #r "./packages/FAKE/tools/FakeLib.dll"
 
 open Fake
+open Fake.Testing.Expecto
 
 // Directories
 let buildDir  = "./build/"
@@ -13,8 +14,8 @@ let appReferences  =
     !! "/**/*.csproj"
     ++ "/**/*.fsproj"
 
-// version info
-let version = "0.1"  // or retrieve from CI server
+let testExecutables =
+    !! (buildDir + "/**/*Test.exe")
 
 // Targets
 Target "Clean" (fun _ ->
@@ -30,12 +31,20 @@ Target "Build" (fun _ ->
 Target "Deploy" (fun _ ->
     !! (buildDir + "/**/*.*")
     -- "*.zip"
-    |> Zip buildDir (deployDir + "ApplicationName." + version + ".zip")
+    |> Zip buildDir (deployDir + "TestLib.zip")
+)
+
+// For Unit Test by using Expecto
+Target "RunTests" (fun _ ->
+    testExecutables
+    |> Expecto (fun p -> { p with Parallel = false } )
+    |> ignore
 )
 
 // Build order
 "Clean"
   ==> "Build"
+  ==> "RunTests"
   ==> "Deploy"
 
 // start build
